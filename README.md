@@ -2,7 +2,7 @@
 Do you have a stochastic trajectory of ![math](http://mathurl.com/y8nuzht2.png) and need to compute ![math](http://mathurl.com/y7fw6bk4.png) or another arbitrary ![math](http://mathurl.com/ybzzbmxf.png) ? Then the function in this Python file will be useful for you. Estimating such an ensemble average from a time-trajectory are often used in soft-matter physics, e.g. to investigate diffusion of a particle ![url](http://mathurl.com/y9ukbenk.png). 
 
 ## Usage
-Usage is very easy. You simply call the function
+Usage is very easy. You can run an example script (which shows a Matplotlib window) by simply running the script, i.e. `python ComputeStochasticMean.py`. For your own usage, you simply call the function
 ```python
 bins_out, result = compute_stochastich_mean(x,y,bins,func)
 ```
