@@ -80,7 +80,18 @@ def compute_stochastic_mean(x, y, bins, func=stoch_mean_func_square):
 
     for i in range(n_bins-1): # fill up all the bins
         add_mean_at_bin(i)
-    return result[:-1] # the last bin does not have a right-edge, so its value is undefined
+    return bins[:-1], result[:-1] # the last bin does not have a right-edge, so its value is undefined
 
 if __name__ == '__main__':
     print("Let's run a test of the stochastic mean!")
+    x = np.arange(0, 1_000)
+    y = np.cumsum(np.random.randint(0, 3, size=len(x)) - 1)
+    bins = np.arange(10)
+    bins, Y = compute_stochastic_mean(x, y, bins=bins, func=stoch_mean_func_square)
+    import matplotlib.pyplot as plt
+    plt.xlabel(r'$t$')
+    plt.ylabel(r'$\langle ( x(t)-x(0) )^2 \rangle$')
+    plt.loglog(bins, Y, 'ok', label=r'Measured using $\mathtt{compute_stochastic_mean}$')
+    plt.loglog(bins, bins**1, ':k', label=r'$\mathrm{MSD} \sim t$')
+    plt.legend(loc='upper left')
+    plt.show()
