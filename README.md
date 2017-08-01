@@ -1,5 +1,7 @@
 ## Synopsis
 Do you have a stochastic trajectory of $x$
+*E = mc<sup>2</sup>*
+
 Why the project is useful
 How users can get started with the project
 Where users can get help with your project
